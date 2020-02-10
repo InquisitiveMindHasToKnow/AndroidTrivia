@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 
 import org.ohmstheresistance.androidtrivia.R
 import org.ohmstheresistance.androidtrivia.databinding.GameFragmentBinding
+import kotlin.math.min
 
 class GameFragment : Fragment() {
 
@@ -44,7 +45,7 @@ class GameFragment : Fragment() {
     lateinit var currentQuestion: Question
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
-    private val numQuestions = Math.min((questions.size + 1) / 2, 3)
+    private val numQuestions = min((questions.size + 1) / 2, 5)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -81,7 +82,7 @@ class GameFragment : Fragment() {
                     }
                 } else {
 
-                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment2)
+                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
                 }
             }
         }
