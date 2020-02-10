@@ -6,6 +6,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/titleFragment"
+            android:name="org.ohmstheresistance.androidtrivia.fragments.TitleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
     </LinearLayout>
 
 </layout>
