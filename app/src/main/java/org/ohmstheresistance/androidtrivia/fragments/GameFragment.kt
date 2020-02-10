@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 
 import org.ohmstheresistance.androidtrivia.R
 import org.ohmstheresistance.androidtrivia.databinding.GameFragmentBinding
@@ -76,9 +77,11 @@ class GameFragment : Fragment() {
                         binding.invalidateAll()
                     } else {
 
+                        view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
                     }
                 } else {
 
+                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment2)
                 }
             }
         }
