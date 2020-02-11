@@ -31,7 +31,7 @@ class GameFragment : Fragment() {
         Question(text = "Inflate layout in fragments?",
             answers = listOf("onCreateView", "onActivityCreated", "onCreateLayout", "onInflateLayout")),
         Question(text = "Build system for Android?",
-            answers = listOf("Gradle", "Graddle", "Grodle", "Groyle")),
+            answers = listOf("Gradle", "Grapple", "Groovy", "Groyle")),
         Question(text = "Android vector format?",
             answers = listOf("VectorDrawable", "AndroidVectorDrawable", "DrawableVector", "AndroidVector")),
         Question(text = "Android Navigation Component?",
@@ -39,7 +39,29 @@ class GameFragment : Fragment() {
         Question(text = "Registers app with launcher?",
             answers = listOf("intent-filter", "app-registry", "launcher-registry", "app-launcher")),
         Question(text = "Mark a layout for Data Binding?",
-            answers = listOf("<layout>", "<binding>", "<data-binding>", "<dbinding>"))
+            answers = listOf("<layout>", "<binding>", "<data-binding>", "<dbinding>")),
+        Question(text= "What is ANR?",
+            answers = listOf("Application Not Responding", "Android Needs Restarting", "Android Notification Removal", "Application Needs Refreshing")),
+        Question(text = "Which of these is NOT an access modifier?",
+            answers = listOf("primitive", "public", "private", "protected")),
+        Question(text= "Where are activities declared so the system can access them?",
+            answers = listOf("manifest", "fragment", "menu", "layout")),
+        Question(text = "What is an Array used for?",
+            answers = listOf("Arrays are used to store multiple values in a single variable.", "Arrays are used to store key value pairs.",
+                "Arrays are used to connect to the internet easily.", "Arrays are used to set text to views.")),
+        Question(text = "What is a HashMap?",
+            answers = listOf("A HashMap is a collection class that is used for storing key/value pairs", "A HashMap is a primitive data type.",
+                "A HashMap is an ordered collection.", "A HashMap is a mutable sequence of characters.")),
+        Question(text= "What is the difference between an int and a long?",
+            answers = listOf("An int is a 32-bit number and a long is a 64-bit number.", "An int is a 64-bit number and a long is a 32-bit number.",
+                "An int is a 8-bit number and a long is a 16-bit number.", "An int is a 16-bit number and a long is a 8-bit number.")),
+        Question(text = "What is the difference between a val and var declaration?",
+            answers = listOf("val variables cannot be changed. They’re like final modifiers in Java. A var can be reassigned.", "var variables cannot be changed. They’re like final modifiers in Java. A val can be reassigned.",
+                "val variables are the same as var variables.", "val variables are always null, var variables are never null.")),
+        Question(text = "What are the android app components?",
+            answers = listOf("Activities, Services, Broadcast receivers, Content providers", "Manifest, Context, Garbage Collection, Variables",
+                "Arrays, Integers, HashSets, Data Binding", "Context, Application, Layout, Drawables"))
+
     )
 
     lateinit var currentQuestion: Question
@@ -56,6 +78,7 @@ class GameFragment : Fragment() {
         randomizeQuestions()
 
         binding.game = this
+        binding.questionRadioGroup.clearCheck()
 
         binding.submitButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
         { view: View ->
@@ -86,6 +109,9 @@ class GameFragment : Fragment() {
                     //view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
                     view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                 }
+
+                binding.questionRadioGroup.clearCheck()
+                view.clearAnimation()
             }
         }
         return binding.root
