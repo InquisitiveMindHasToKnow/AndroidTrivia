@@ -124,12 +124,12 @@ class GameFragment : Fragment() {
                     } else {
 
                         //view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
-                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(questionIndex, numQuestions))
                     }
                 } else {
 
                     //view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
-                    view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
+                    view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment(questionIndex, numQuestions))
                 }
 
                 binding.questionRadioGroup.clearCheck()
@@ -153,6 +153,4 @@ class GameFragment : Fragment() {
         answers.shuffle()
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
     }
-
-
 }
