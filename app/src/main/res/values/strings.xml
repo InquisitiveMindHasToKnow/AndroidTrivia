@@ -18,5 +18,7 @@
     <string name="congratulations">Congratulations!</string>
     <string name="share">Share</string>
     <string name="sharing_not_available">Sharing Not Available</string>
+    <string name="winner_text">You answered %1$d/%2$d questions correctly. Bravo!</string>
+    <string name="try_again_text">You only answered %1$d/%2$d answers correctly.</string>
 
 </resources>

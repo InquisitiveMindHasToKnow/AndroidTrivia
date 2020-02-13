@@ -16,17 +16,32 @@ import org.ohmstheresistance.androidtrivia.databinding.GameWonFragmentBinding
 
 class GameWonFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
-       val binding: GameWonFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.game_won_fragment, container, false)
+        val binding: GameWonFragmentBinding =
+            DataBindingUtil.inflate(inflater, R.layout.game_won_fragment, container, false)
 
-        binding.nextMatchButton.setOnClickListener{ view: View ->
+        var winningInfoArgs = arguments?.let { GameWonFragmentArgs.fromBundle(it) }
+
+        binding.nextMatchButton.setOnClickListener { view: View ->
 
             //view.findNavController().navigate(R.id.action_gameWonFragment_to_gameFragment)
-            view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
+            view.findNavController()
+                .navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
 
+        binding.winnerTextTextview.setText(getString(R.string.winner_text,
+            winningInfoArgs?.numCorrect, winningInfoArgs?.numQuestions
+        ))
+
         setHasOptionsMenu(true)
+
+
+
 
         return binding.root
     }
@@ -55,9 +70,12 @@ class GameWonFragment : Fragment() {
 
         return activity?.let {
             ShareCompat.IntentBuilder.from(it)
-                .setText(getString(R.string.share_success_text,
-                    winningInfoArgs?.numCorrect, winningInfoArgs?.numQuestions
-                ))
+                .setText(
+                    getString(
+                        R.string.share_success_text,
+                        winningInfoArgs?.numCorrect, winningInfoArgs?.numQuestions
+                    )
+                )
                 .setType("text/plain")
                 .intent
         }

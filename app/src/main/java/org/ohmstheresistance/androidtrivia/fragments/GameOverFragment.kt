@@ -14,20 +14,31 @@ import org.ohmstheresistance.androidtrivia.databinding.GameOverFragmentBinding
 
 class GameOverFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
-        val binding: GameOverFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.game_over_fragment, container, false)
+        val binding: GameOverFragmentBinding =
+            DataBindingUtil.inflate(inflater, R.layout.game_over_fragment, container, false)
+
+        var lostGameInfoArgs = arguments?.let { GameWonFragmentArgs.fromBundle(it) }
 
         binding.tryAgainButton.setOnClickListener { view: View ->
 
             //both lines below do the same thing!
 
             //view.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
-            view.findNavController().navigate(GameOverFragmentDirections.actionGameOverFragmentToGameFragment())
-
+            view.findNavController()
+                .navigate(GameOverFragmentDirections.actionGameOverFragmentToGameFragment())
         }
 
-            return binding.root
+        binding.gameOverTextTextview.setText(getString(R.string.try_again_text,
+            lostGameInfoArgs?.numCorrect, lostGameInfoArgs?.numQuestions
+        ))
+
+        return binding.root
     }
 
 
