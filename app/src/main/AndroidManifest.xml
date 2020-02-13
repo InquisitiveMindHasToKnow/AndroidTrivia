@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/you_win"
+        android:icon="@drawable/androidbot"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/you_win"
+        android:roundIcon="@drawable/androidbot"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity"

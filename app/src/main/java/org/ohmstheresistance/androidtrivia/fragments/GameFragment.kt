@@ -60,14 +60,36 @@ class GameFragment : Fragment() {
                 "val variables are the same as var variables.", "val variables are always null, var variables are never null.")),
         Question(text = "What are the android app components?",
             answers = listOf("Activities, Services, Broadcast receivers, Content providers", "Manifest, Context, Garbage Collection, Variables",
-                "Arrays, Integers, HashSets, Data Binding", "Context, Application, Layout, Drawables"))
-
+                "Arrays, Integers, HashSets, Data Binding", "Context, Application, Layout, Drawables")),
+        Question(text = "What is context?",
+            answers = listOf("Context is the current state of the application/object", "Context is what we use to start new activities",
+                "Context handles orientation changes in applications", "Context stores all activity and fragment layouts of an app.")),
+        Question(text = "What is an Activity?",
+            answers = listOf("An activity provides the window in which the app draws its UI.", "An activity is a menu that displays options.",
+                "An activity  is a build tool that Android Studio and Android Gradle Plugin use to compile and package your app’s resources.",
+                "An activity is irrelevant to Android.")),
+        Question(text = "What is AAPT? (Android Asset Packaging Tool)",
+            answers = listOf("a build tool that Android Studio and Android Gradle Plugin use to compile and package your app’s resources.",
+                "a packaging tool to organize android libraries.", "a tool for garbage collection and freeing up memory.",
+                "a tool that stores all application variables.")),
+        Question(text = "What is a Service?",
+            answers = listOf("A service is a component which doesn't have UI and can perform long running operations like downloading stuff, playing music etc",
+                "A kind of message or information that is passed to the components", "a component that provides the ability to launch an activity based not only on an explicit request",
+                        "a component responsible for being the the middle man between a View and Model")),
+        Question(text = "The xml file that holds all the text of the application is: ",
+            answers = listOf("strings.xml", "drawables.xml", "texts.xml", "layouts.xml")),
+        Question(text= "What runs in the background and doesn't have any UI components?",
+            answers = listOf("Services", "Activities", "Intents", "Content Providers")),
+        Question(text = "When an activity doesn't exist in memory it is in:",
+            answers = listOf("Starting state", "Loading state", "Invisible state", "Running state")),
+        Question(text = "Which of the following is the most \"resource hungry\" part of dealing with Activities on Android?",
+            answers = listOf("Opening a new app", "Closing an app", "Suspending an app", "Restoring the most recent app"))
     )
 
     lateinit var currentQuestion: Question
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
-    private val numQuestions = min((questions.size + 1) / 2, 5)
+    private val numQuestions = min((questions.size + 1) / 2, 10)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
