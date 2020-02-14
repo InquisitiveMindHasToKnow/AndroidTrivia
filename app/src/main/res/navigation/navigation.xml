@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/titleFragment"
         android:name="org.ohmstheresistance.androidtrivia.fragments.TitleFragment"
-        android:label="TitleFragment" >
+        android:label=" ">
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/gameOverFragment2"
         android:name="org.ohmstheresistance.androidtrivia.fragments.GameOverFragment"
-        android:label="GameOverFragment" >
+        android:label=" ">
         <action
             android:id="@+id/action_gameOverFragment_to_gameFragment"
             app:destination="@id/gameFragment"
@@ -47,7 +47,7 @@
     <fragment
         android:id="@+id/gameWonFragment"
         android:name="org.ohmstheresistance.androidtrivia.fragments.GameWonFragment"
-        android:label="GameWonFragment" >
+        android:label=" ">
         <action
             android:id="@+id/action_gameWonFragment_to_gameFragment"
             app:destination="@id/gameFragment"
@@ -62,9 +62,9 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="org.ohmstheresistance.androidtrivia.fragments.AboutFragment"
-        android:label="@string/about_text" />
+        android:label="About" />
     <fragment
         android:id="@+id/rulesFragment"
         android:name="org.ohmstheresistance.androidtrivia.fragments.RulesFragment"
-        android:label="RulesFragment" />
+        android:label="Rules" />
 </navigation>
