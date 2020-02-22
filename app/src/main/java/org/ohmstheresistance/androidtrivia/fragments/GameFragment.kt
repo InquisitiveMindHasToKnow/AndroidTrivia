@@ -97,7 +97,15 @@ class GameFragment : Fragment() {
         Question(text = "The protected visibility modifier means:",
             answers = listOf("This can only be accessed from the class defining it and any derived classes.", "This can only be accessed from the scope of the class defining it.", "This can be accessed from anywhere.", "This can only be accessed from the module code.")),
         Question(text = "The private visibility modifier means:",
-            answers = listOf("This can only be accessed from the module code.", "This can only be accessed from the class defining it and any derived classes.", "This can only be accessed from the scope of the class defining it.", "This can be accessed from anywhere."))
+            answers = listOf("This can only be accessed from the module code.", "This can only be accessed from the class defining it and any derived classes.", "This can only be accessed from the scope of the class defining it.", "This can be accessed from anywhere.")),
+        Question(text = "What is Reflection?",
+            answers = listOf("A language's ability to inspect code at runtime instead of compile time.", "A language's ability to inspect code at compile time instead of runtime.", "None of these", "An language's ability to copy code without compiling.")),
+        Question(text = "Which of these is used to handle null exceptions in Kotlin?",
+            answers = listOf("The Elvis Operator", "Range", "Sealed Class", "Lambdas")),
+        Question(text = " What are high order functions?",
+            answers = listOf("High order functions consider functions as a parameter and produce a function.", "Higher order functions allow null objects by default.", "Higher order functions are the opposite or Lower order functions.", "All of these"))
+
+
     )
 
     lateinit var currentQuestion: Question
