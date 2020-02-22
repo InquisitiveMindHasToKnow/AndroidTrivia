@@ -83,7 +83,21 @@ class GameFragment : Fragment() {
         Question(text = "When an activity doesn't exist in memory it is in:",
             answers = listOf("Starting state", "Loading state", "Invisible state", "Running state")),
         Question(text = "Which of the following is the most \"resource hungry\" part of dealing with Activities on Android?",
-            answers = listOf("Opening a new app", "Closing an app", "Suspending an app", "Restoring the most recent app"))
+            answers = listOf("Opening a new app", "Closing an app", "Suspending an app", "Restoring the most recent app")),
+        Question(text = "In Kotlin, classes are ______ by default, meaning they cannot be inherited from",
+            answers = listOf("Final", "Public", "Open", "Protected")),
+        Question(text = "To allow inheritance on a class, use the ______ keyword.",
+            answers = listOf("Open", "Returnable", "Inheritable", "Public Class")),
+        Question(text = "This type of class is open by default:",
+            answers = listOf("All of These", "Interfaces", "Abstract Classes", "Sealed Classes")),
+        Question(text = "The public visibility modifier means:",
+            answers = listOf("This can be accessed from anywhere.", "This can only be accessed from the class defining it and any derived classes.", "This can only be accessed from the module code.", "This can only be accessed from the scope of the class defining it.")),
+        Question(text = "The internal visibility modifier means:",
+            answers = listOf("This can only be accessed from the scope of the class defining it.", "This can be accessed from anywhere.", "This can only be accessed from the module code.", "This can only be accessed from the class defining it and any derived classes.")),
+        Question(text = "The protected visibility modifier means:",
+            answers = listOf("This can only be accessed from the class defining it and any derived classes.", "This can only be accessed from the scope of the class defining it.", "This can be accessed from anywhere.", "This can only be accessed from the module code.")),
+        Question(text = "The private visibility modifier means:",
+            answers = listOf("This can only be accessed from the module code.", "This can only be accessed from the class defining it and any derived classes.", "This can only be accessed from the scope of the class defining it.", "This can be accessed from anywhere."))
     )
 
     lateinit var currentQuestion: Question

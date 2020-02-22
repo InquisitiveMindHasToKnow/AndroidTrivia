@@ -23,7 +23,7 @@ class GameOverFragment : Fragment() {
         val binding: GameOverFragmentBinding =
             DataBindingUtil.inflate(inflater, R.layout.game_over_fragment, container, false)
 
-        var lostGameInfoArgs = arguments?.let { GameWonFragmentArgs.fromBundle(it) }
+        var lostGameInfoArgs = arguments?.let { GameOverFragmentArgs.fromBundle(it) }
 
         binding.tryAgainButton.setOnClickListener { view: View ->
 
