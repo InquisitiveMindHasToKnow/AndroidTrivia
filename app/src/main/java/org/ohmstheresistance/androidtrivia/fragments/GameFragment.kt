@@ -103,7 +103,9 @@ class GameFragment : Fragment() {
         Question(text = "Which of these is used to handle null exceptions in Kotlin?",
             answers = listOf("The Elvis Operator", "Range", "Sealed Class", "Lambdas")),
         Question(text = " What are high order functions?",
-            answers = listOf("High order functions consider functions as a parameter and produce a function.", "Higher order functions allow null objects by default.", "Higher order functions are the opposite or Lower order functions.", "All of these"))
+            answers = listOf("High order functions consider functions as a parameter and produce a function.", "Higher order functions allow null objects by default.", "Higher order functions are the opposite or Lower order functions.", "All of these")),
+        Question(text = "What are the two types of intents?",
+            answers = listOf("Implicit and Explicit", "Immediate and Pending", "Click and Press", "Private and Public"))
 
 
     )
