@@ -105,8 +105,17 @@ class GameFragment : Fragment() {
         Question(text = " What are high order functions?",
             answers = listOf("High order functions consider functions as a parameter and produce a function.", "Higher order functions allow null objects by default.", "Higher order functions are the opposite or Lower order functions.", "All of these")),
         Question(text = "What are the two types of intents?",
-            answers = listOf("Implicit and Explicit", "Immediate and Pending", "Click and Press", "Private and Public"))
-
+            answers = listOf("Implicit and Explicit", "Immediate and Pending", "Click and Press", "Private and Public")),
+        Question(text = "What are the types of strings available in Kotlin?",
+            answers = listOf("Raw and Escaped", "Resource and Stylistic", "Sentences and Single Words", "Immediate and Void")),
+        Question(text = "What are the structural jump expression in Kotlin?",
+            answers = listOf("Break, Continue, Return", "Switch, Lateinit var, Val", "Constructor, Adapter, ViewHolder", "Coroutines, Collections, Repeat")),
+        Question(text = "How many structural jump expressions does Kotlin have?",
+            answers = listOf("3", "4, 1", "2")),
+        Question(text = "An example of a Kotlin data type is:",
+            answers = listOf("All of these", "Arrays", "Strings","Numbers")),
+        Question(text = "What is the difference between Const and Val?",
+            answers = listOf("Const is primarily for compile time initializations and val is used for runtime initializations", "Const is primarily for runtime initializations and val is used for compile time initializations", "There's no difference", "Both must be used for runtime initializations"))
 
     )
 
